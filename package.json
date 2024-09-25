@@ -1,0 +1,26 @@
+{
+  "name": "titan-admin",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "serve": "vite",
+    "build": " vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@purge-icons/generated": "^0.10.0",
+    "axios": "^1.7.4",
+    "nprogress": "^0.2.0",
+    "vue": "^3.4.37",
+    "vue-router": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.2.0",
+    "@types/nprogress": "^0.2.3",
+    "@vitejs/plugin-vue": "^5.1.2",
+    "less": "^4.2.0",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.0"
+  }
+}
