@@ -25,14 +25,14 @@
         </div>
       </Transition>
     </div>
-    <Transition v-if="!collapsed">
-      <ul
-        class="titan-menu-sub"
-        :style="{
-          height: (children?.length || 0) * 44 + 'px',
-        }"
-        v-show="open"
-      >
+    <div
+      v-if="!collapsed"
+      class="sub-box"
+      :class="{
+        'sub-box-rows-0': !open,
+      }"
+    >
+      <ul class="titan-menu-sub">
         <MenuItem
           ref="menuItemRefs"
           :label="item.label"
@@ -41,7 +41,7 @@
           v-for="(item, index) in children"
         ></MenuItem>
       </ul>
-    </Transition>
+    </div>
   </li>
 </template>
 <script lang="ts" setup>
@@ -212,5 +212,14 @@ function toggle() {
 .collapsed-leave-to {
   opacity: 0;
   width: 0 !important;
+}
+
+.sub-box {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.sub-box-rows-0 {
+  grid-template-rows: 0fr;
 }
 </style>
